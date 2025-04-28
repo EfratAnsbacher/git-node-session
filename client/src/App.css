@@ -1,0 +1,363 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.page {
+  display: grid;
+  grid-template-rows: 50px 1fr 30px;
+  min-height: 100vh;
+}
+
+header,footer {
+  background-color:none;
+  color: white;
+  display: grid;
+  place-content: center;
+}
+
+.products-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.nav {
+  display: flex;
+  gap: 10px;
+  font-size: 1.5rem;
+}
+
+.nav a {
+  color: white;
+}
+
+.nav a.active {
+  background-color: white;
+  color: black;
+}
+
+.delete-btn {
+  background-color: white;
+  border: none;
+  font-size: 2rem;
+  color: red;
+  padding: 10px;
+}
+
+.delete-btn:hover {
+  color: pink;
+}
+
+.update-btn {
+  background-color: white;
+  border: none;
+  font-size: 2rem;
+  color: black;
+  padding: 10px;
+}
+
+.update-btn:hover {
+  color: #ccc
+}
+
+/* ודא שהדיאלוג מוצג מעל רכיבים אחרים */
+.updateWindow {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1300; /* ערך גבוה כדי להבטיח שהדיאלוג יוצג מעל שאר הרכיבים */
+}
+
+.updateWindowInfo {
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  z-index: 1400; /* ערך גבוה יותר עבור התוכן בתוך הדיאלוג */
+}
+
+
+.addToCart-btn{
+  /* background-color: white; */
+  border: none;
+  font-size: 2rem;
+  padding: 10px;
+  background: none;
+}
+
+.closeUpdate{
+  border: none;
+  font-size: 1.5rem;
+  background: none;
+}
+
+.closeUpdate:hover{
+  color: #ccc
+}
+
+.products-list{
+  display: flex;
+  flex-wrap: wrap;
+  width:80vw;
+  /* align-items: center; */
+  justify-content: center;
+  flex-direction: row;
+  margin-top: 10vh;
+  gap: 20px;
+  margin-left: 10vw;
+}
+
+.product-item{
+  width: 23%;
+}
+
+.logo{
+ color: rgb(255, 77, 0);
+}
+
+.empty-cart{
+  font-size: 10rem;
+  color: red;
+  border-color: black;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  margin-left: 20%;
+}
+
+/* gpt------------------------------------------------------------ */
+
+/* מוצר */
+.product-item {
+  width: 23%;
+  margin: 10px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  background-color: #ffffff; /* צבע רקע לבן עבור הכרטיסים */
+}
+
+/* כותרת הכרטיס */
+.MuiCardHeader-root {
+  background-color: #ff5722; /* צבע רקע כתום עבור כותרת הכרטיס */
+  color: white; /* צבע טקסט לבן עבור כותרת הכרטיס */
+}
+
+/* מדיה של הכרטיס */
+.MuiCardMedia-root {
+  height: 194px; /* גובה מדיה בכרטיס */
+}
+
+/* תוכן הכרטיס */
+.MuiCardContent-root {
+  padding: 16px; /* ריפוד לתוכן הכרטיס */
+}
+
+/* פעולות בכרטיס */
+.MuiCardActions-root {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 16px;
+}
+
+/* כפתורים בכרטיס */
+.MuiButton-root {
+  background-color: #4caf50; /* צבע רקע ירוק לכפתורים */
+  color: #ffffff; /* צבע טקסט לבן לכפתורים */
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
+}
+
+.MuiButton-root:hover {
+  background-color: #388e3c; /* צבע רקע ירוק כהה יותר בהעברה על הכפתור */
+}
+
+/* כפתור מחיקה */
+.delete-btn {
+  color: #d32f2f; /* צבע אדום לכפתור מחיקה */
+}
+
+.delete-btn:hover {
+  color: #c62828; /* צבע אדום כהה יותר בהעברה על הכפתור */
+}
+
+/* כפתור עדכון */
+.update-btn {
+  color: #ff5722; /* צבע כתום לכפתור עדכון */
+}
+
+.update-btn:hover {
+  color: #e64a19; /* צבע כתום כהה יותר בהעברה על הכפתור */
+}
+
+/* כפתור הוספה לסל */
+.addToCart-btn {
+  color: #4caf50; /* צבע ירוק לכפתור הוספה לסל */
+}
+
+.addToCart-btn:hover {
+  color: #388e3c; /* צבע ירוק כהה יותר בהעברה על הכפתור */
+}
+
+/* כפתור סגירה */
+.closeUpdate {
+  color: #000000; /* צבע שחור לכפתור סגירה */
+}
+
+.closeUpdate:hover {
+  color: #000000; /* צבע כהה יותר לכפתור סגירה בהעברה */
+}
+
+/* כפתור הרחבה */
+.MuiIconButton-root {
+  transition: color 0.3s;
+}
+
+.MuiIconButton-root:hover {
+  color: #ff5722; /* צבע כתום עבור כפתורים עליהם נעבור עם העכבר */
+}
+/* מיכל עמוד ההרשמה */
+.register {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* מבטיח שהמיכל יתפוס את גובה המסך המלא */
+  background-color: #f4f4f9; /* צבע רקע בהיר */
+}
+
+/* מיכל עמוד הכניסה */
+.login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* מבטיח שהמיכל יתפוס את גובה המסך המלא */
+  background-color: #f4f4f9; /* צבע רקע בהיר */
+}
+
+.add-product-form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* מבטיח שהמיכל יתפוס את גובה המסך המלא */
+    background-color: #f4f4f9; /* צבע רקע בהיר */
+}
+
+/* עיצוב הטופס */
+.auth-form {
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  margin: 1rem;
+}
+
+/* עיצוב הכותרת */
+.auth-form h1 {
+  margin-bottom: 1.5rem;
+  color: #333;
+  text-align: center;
+}
+
+/* עיצוב שדות הקלט */
+.auth-form .MuiTextField-root {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+/* עיצוב כפתור השיגור */
+.auth-form .MuiButton-root {
+  width: 100%;
+  padding: 0.8rem;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+/* כפתור שלח / כניסה */
+.auth-form .MuiButton-root:hover {
+  background-color: #0056b3; /* צבע כחול כהה יותר בעת ריחוף */
+}
+
+.add-product-link{
+  height: 50px;
+  width: 50px;
+}
+
+.add-product-link {
+  display: inline-block;
+  text-decoration: none;
+  background-color: red;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: bold;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s, box-shadow 0.3s;
+  margin-left: 10%;
+}
+
+.add-product-link:hover {
+  background-color: pink;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* .tab-icon {
+  font-size: 1.5rem; 
+} */
+
+.tab-icon{
+  font-size: 1.5rem; /* הגודל של האייקון */
+  transition: color 0.3s ease; /* שינוי צבע בצורה חלקה */
+}
+
+
+.Mui-selected {
+  color: red; /* צבע האייקון והטקסט עבור ה-Tab הנבחר */
+}
+
+/* הגדרת הסגנון עבור כל ה-Tabs */
+.MuiTabs-root {
+  font-size: 1.5rem; /* גודל הטקסט */
+}
+
+/* הגדרת הסגנון עבור ה-Tab הנבחר */
+.MuiTab-root {
+  transition: color 0.3s ease; /* שינוי צבע בצורה חלקה */
+}
+
+.Mui-selected {
+  color: red; /* צבע האייקון והטקסט עבור ה-Tab הנבחר */
+}
+
+/* הצבע עבור ה-Icon בתוך ה-Tab הנבחר */
+.MuiTab-root.Mui-selected .tab-icon {
+  color: red; /* צבע האייקון */
+}
+
+/* הצבע עבור ה-Label בתוך ה-Tab הנבחר */
+.MuiTab-root.Mui-selected .MuiTab-label {
+  color: red; /* צבע ה-label */
+}
+
+/* צבע רקע של ה-Tab הנבחר אם יש צורך */
+.MuiTab-root.Mui-selected {
+  background-color: rgba(255, 0, 0, 0.1); /* צבע רקע אדום בהיר */
+}
+
+
+
+
+
